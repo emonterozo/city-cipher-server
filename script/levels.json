@@ -1,0 +1,654 @@
+[
+  {
+    "level_number": 1,
+    "letters": [
+      "D",
+      "F",
+      "O",
+      "R"
+    ],
+    "rows": 5,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "FORD",
+        "x": 1,
+        "y": 1,
+        "dir": "h"
+      },
+      {
+        "word": "FOR",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "ROD",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 2,
+    "letters": [
+      "L",
+      "O",
+      "O",
+      "T"
+    ],
+    "rows": 6,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "TOOL",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "TOO",
+        "x": 1,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "LOT",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 3,
+    "letters": [
+      "I",
+      "K",
+      "L",
+      "N"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "LINK",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "INK",
+        "x": 2,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "NIL",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 4,
+    "letters": [
+      "D",
+      "F",
+      "N",
+      "U"
+    ],
+    "rows": 6,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "FUND",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "FUN",
+        "x": 1,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "UND",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 5,
+    "letters": [
+      "E",
+      "H",
+      "T",
+      "Y"
+    ],
+    "rows": 6,
+    "cols": 7,
+    "grid": [
+      {
+        "word": "THEY",
+        "x": 2,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "THE",
+        "x": 2,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "YET",
+        "x": 4,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "HEY",
+        "x": 1,
+        "y": 4,
+        "dir": "h"
+      }
+    ]
+  },
+  {
+    "level_number": 6,
+    "letters": [
+      "A",
+      "E",
+      "G",
+      "L"
+    ],
+    "rows": 6,
+    "cols": 7,
+    "grid": [
+      {
+        "word": "GALE",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "AGE",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "LEG",
+        "x": 3,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "GEL",
+        "x": 3,
+        "y": 4,
+        "dir": "h"
+      }
+    ]
+  },
+  {
+    "level_number": 7,
+    "letters": [
+      "A",
+      "D",
+      "L",
+      "N"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "LAND",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "AND",
+        "x": 2,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "DAN",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "DNA",
+        "x": 4,
+        "y": 3,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 8,
+    "letters": [
+      "A",
+      "E",
+      "T"
+    ],
+    "rows": 7,
+    "cols": 5,
+    "grid": [
+      {
+        "word": "TEA",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "EAT",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "ATE",
+        "x": 3,
+        "y": 3,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 9,
+    "letters": [
+      "D",
+      "E",
+      "K",
+      "S"
+    ],
+    "rows": 7,
+    "cols": 8,
+    "grid": [
+      {
+        "word": "DESK",
+        "x": 3,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "DES",
+        "x": 3,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "KDE",
+        "x": 4,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "EDS",
+        "x": 1,
+        "y": 5,
+        "dir": "h"
+      }
+    ]
+  },
+  {
+    "level_number": 10,
+    "letters": [
+      "N",
+      "O",
+      "W"
+    ],
+    "rows": 7,
+    "cols": 5,
+    "grid": [
+      {
+        "word": "WON",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "NOW",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "OWN",
+        "x": 2,
+        "y": 3,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 11,
+    "letters": [
+      "A",
+      "C",
+      "D",
+      "H"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "CHAD",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "HAD",
+        "x": 2,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "CAD",
+        "x": 4,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 12,
+    "letters": [
+      "E",
+      "I",
+      "N",
+      "W"
+    ],
+    "rows": 5,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "WINE",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "NEW",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "WIN",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 13,
+    "letters": [
+      "A",
+      "D",
+      "N"
+    ],
+    "rows": 6,
+    "cols": 5,
+    "grid": [
+      {
+        "word": "AND",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "DAN",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "DNA",
+        "x": 3,
+        "y": 2,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 14,
+    "letters": [
+      "L",
+      "O",
+      "O",
+      "T"
+    ],
+    "rows": 6,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "TOOL",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "TOO",
+        "x": 1,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "LOT",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 15,
+    "letters": [
+      "C",
+      "I",
+      "K",
+      "P"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "PICK",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "PIC",
+        "x": 1,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "PCI",
+        "x": 2,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 16,
+    "letters": [
+      "A",
+      "E",
+      "J",
+      "N"
+    ],
+    "rows": 8,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "JANE",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "JEAN",
+        "x": 1,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "JAN",
+        "x": 3,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 17,
+    "letters": [
+      "A",
+      "R",
+      "T"
+    ],
+    "rows": 6,
+    "cols": 5,
+    "grid": [
+      {
+        "word": "RAT",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "ART",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "TAR",
+        "x": 3,
+        "y": 2,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 18,
+    "letters": [
+      "D",
+      "L",
+      "M",
+      "O"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "MOLD",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "OLD",
+        "x": 2,
+        "y": 3,
+        "dir": "v"
+      },
+      {
+        "word": "MOD",
+        "x": 4,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "DOM",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 19,
+    "letters": [
+      "B",
+      "E",
+      "H",
+      "T"
+    ],
+    "rows": 7,
+    "cols": 6,
+    "grid": [
+      {
+        "word": "BETH",
+        "x": 1,
+        "y": 3,
+        "dir": "h"
+      },
+      {
+        "word": "THE",
+        "x": 2,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "BET",
+        "x": 1,
+        "y": 3,
+        "dir": "v"
+      }
+    ]
+  },
+  {
+    "level_number": 20,
+    "letters": [
+      "A",
+      "E",
+      "G",
+      "L"
+    ],
+    "rows": 6,
+    "cols": 7,
+    "grid": [
+      {
+        "word": "GALE",
+        "x": 1,
+        "y": 2,
+        "dir": "h"
+      },
+      {
+        "word": "AGE",
+        "x": 1,
+        "y": 1,
+        "dir": "v"
+      },
+      {
+        "word": "LEG",
+        "x": 3,
+        "y": 2,
+        "dir": "v"
+      },
+      {
+        "word": "GEL",
+        "x": 3,
+        "y": 4,
+        "dir": "h"
+      }
+    ]
+  }
+]
