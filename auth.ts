@@ -1,79 +1,43 @@
+// auth.ts
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import connect from "./lib/db/mongodb";
-import Customer from "./models/Store";
-import { comparePassword } from "./lib/server/utils";
+import { authConfig } from "./auth.config";
+import connect from "@/lib/db/mongodb";
+import Account from "@/models/Account";
+import {
+  comparePassword,
+  generateAccessToken,
+  generateRefreshToken,
+} from "@/lib/server/utils";
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const { auth, handlers, signIn, signOut } = NextAuth({
+  ...authConfig,
   providers: [
     Credentials({
-      name: "Credentials",
-      credentials: {
-        contact_number: {},
-        password: {},
-      },
       async authorize(credentials) {
-        const { contact_number, password } = credentials as {
-          contact_number: string;
-          password: string;
-        };
         await connect();
-        try {
-          const customer = await Customer.findOne({
-            contact_number: contact_number,
-          }).lean();
-          if (customer) {
-            const isPasswordCorrect = await comparePassword(
-              password,
-              customer.password,
-            );
-            if (isPasswordCorrect) {
-              if (!customer.is_email_verify) {
-                const now = Date.now();
-                if (
-                  customer.otp_send_blocked_until &&
-                  customer.otp_send_blocked_until.getTime() > now
-                ) {
-                  throw new Error("TOO_MANY_ATTEMPTS");
-                }
+        const user = await Account.findOne({ username: credentials?.username });
+        if (!user) return null;
 
-                throw new Error("CUSTOMER_NOT_VERIFY");
-              }
+        const isValid = await comparePassword(
+          credentials.password as string,
+          user.password,
+        );
 
-              return {
-                id: customer._id.toString(),
-                name: customer.name,
-                contact_number: customer.contact_number,
-              };
-            }
-          }
+        if (!isValid) return null;
 
-          throw new Error("INVALID_CREDENTIALS");
-        } catch (error) {
-          if (error instanceof Error) {
-            throw error;
-          }
+        const accessToken = generateAccessToken(user._id.toString());
+        const refreshToken = generateRefreshToken(user._id.toString());
 
-          throw new Error("SERVER_ERROR");
-        }
+        return {
+          id: user._id.toString(),
+          name: user.account_name,
+          type: user.type,
+          storeId: user.store_id?.toString() || null,
+          access_token: accessToken,
+          refresh_token: refreshToken,
+        };
       },
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.sub = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.sub!;
-      }
-      return session;
-    },
-  },
 });

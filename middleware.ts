@@ -1,48 +1,34 @@
+// middleware.ts
+import NextAuth from "next-auth";
+import { authConfig } from "./auth.config";
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
-export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+const { auth } = NextAuth(authConfig);
 
-  if (pathname.startsWith("/admin")) {
-    const authHeader = req.headers.get("authorization");
-    const username = process.env.ADMIN_USER;
-    const password = process.env.ADMIN_PASS;
+export default auth((req) => {
+  const { nextUrl } = req;
+  const isLoggedIn = !!req.auth;
+  const pathname = nextUrl.pathname;
 
-    if (!authHeader?.startsWith("Basic ")) {
-      return new NextResponse("Unauthorized", {
-        status: 401,
-        headers: { "WWW-Authenticate": 'Basic realm="Admin Area"' },
-      });
+  // 2. API Key Protection
+  if (pathname.startsWith("/api") && !pathname.startsWith("/api/auth")) {
+    const apiKey = req.headers.get("x-api-key");
+    if (apiKey !== process.env.API_KEY) {
+      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
     }
-
-    const base64 = authHeader.split(" ")[1];
-    const decoded = atob(base64);
-    const [user, pass] = decoded.split(":");
-
-    if (user !== username || pass !== password) {
-      return new NextResponse("Unauthorized", {
-        status: 401,
-        headers: { "WWW-Authenticate": 'Basic realm="Admin Area"' },
-      });
-    }
+    return NextResponse.next();
   }
 
-  if (pathname.startsWith("/api")) {
-    const apiKey = req.headers.get("x-api-key");
-    const validKey = process.env.API_KEY;
-
-    if (!apiKey || apiKey !== validKey) {
-      return NextResponse.json(
-        { success: false, message: "Unauthorized" },
-        { status: 401 },
-      );
-    }
+  // 3. Protection Logic
+  const isProtectedRoute =
+    pathname.startsWith("/admin") || pathname.startsWith("/store");
+  if (isProtectedRoute && !isLoggedIn) {
+    return NextResponse.redirect(new URL("/management/login", nextUrl));
   }
 
   return NextResponse.next();
-}
+});
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/:path*"],
+  matcher: ["/((?!api/auth|_next/static|_next/image|favicon.ico).*)"],
 };

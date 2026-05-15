@@ -41,3 +41,8 @@ export enum RewardStatus {
   used = 'used',
   expired = 'expired'
 }
+
+export enum AccountType {
+  admin = 'admin',
+  store = 'store'
+}

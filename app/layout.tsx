@@ -2,8 +2,8 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Russo_One, Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
-import "./globals.css"
-import AuthProvider from "./components/AuthProvider";
+import "./globals.css";
+import { SessionProvider } from "next-auth/react";
 
 const russoOne = Russo_One({
   variable: "--font-russo-one",
@@ -18,8 +18,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Red Line Detailing & Auto Spa",
-  description: "Red Line Detailing & Auto Spa",
+  title: "City Cipher",
+  description: "City Cipher",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${russoOne.variable} ${poppins.variable}`}>
-        <AuthProvider> {children}</AuthProvider>
+        <SessionProvider>{children}</SessionProvider>
         <Toaster
           toastOptions={{
             unstyled: true,
